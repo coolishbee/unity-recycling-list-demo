@@ -2,21 +2,20 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class TestChildItem : RecyclingListViewItem {
+public class ChildItem : RecyclingListViewItem {
     public Text leftText;
-    public Text rightText1;
-    public Text rightText2;
+    public Text rightText;   
 
     public Button confirmBtn;
 
-    private TestChildData childData;
-    public TestChildData ChildData {
+    private ChildData childData;
+    public ChildData ChildData {
         get { return childData; }
         set {
             childData = value;
             leftText.text = childData.Title;
-            rightText1.text = childData.Note1;
-            rightText2.text = childData.Note2;
+            rightText.text = childData.Note;
+            //rightText2.text = childData.Note2;
         }
     }
 
@@ -32,6 +31,6 @@ public class TestChildItem : RecyclingListViewItem {
 
     void OnConfirmBtn()
     {
-        Debug.Log("확인하다");
+        Debug.Log(leftText.text + " - "+ rightText.text);
     }
 }
